@@ -1,0 +1,55 @@
+{
+    "kind": "collectionType",
+    "collectionName": "contests",
+    "info": {
+        "singularName": "contest",
+        "pluralName": "contests",
+        "displayName": "Contest"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "richtext"
+        },
+        "startDate": {
+            "type": "datetime"
+        },
+        "endDate": {
+            "type": "datetime"
+        },
+        "accessLevel": {
+            "type": "enumeration",
+            "enum": [
+                "VIP",
+                "Normal"
+            ]
+        },
+        "prize": {
+            "type": "string"
+        },
+        "questions": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::question.question",
+            "mappedBy": "contest"
+        },
+        "prize_histories": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::prize-history.prize-history",
+            "mappedBy": "contest"
+        },
+        "participations": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::participation.participation",
+            "mappedBy": "contest"
+        }
+    }
+}

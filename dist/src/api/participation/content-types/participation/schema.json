@@ -1,0 +1,37 @@
+{
+    "kind": "collectionType",
+    "collectionName": "participations",
+    "info": {
+        "singularName": "participation",
+        "pluralName": "participations",
+        "displayName": "Participation"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "answers": {
+            "type": "json"
+        },
+        "score": {
+            "type": "integer"
+        },
+        "submitted": {
+            "type": "boolean"
+        },
+        "submittedAt": {
+            "type": "datetime"
+        },
+        "contest": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::contest.contest"
+        },
+        "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user"
+        }
+    }
+}

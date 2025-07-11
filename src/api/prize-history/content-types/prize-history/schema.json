@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prize_histories",
+  "info": {
+    "singularName": "prize-history",
+    "pluralName": "prize-histories",
+    "displayName": "prizeHistory"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "prize": {
+      "type": "string"
+    },
+    "contest": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::contest.contest",
+      "inversedBy": "prize_histories"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
